@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+
+    <base href="/">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>Stream</title>
+<!--    <script type="text/javascript" src='http://localhost:3000/v1/merchant/lib.js'></script> -->
+        <script type="text/javascript" src='https://www.simbipay.com/v1/merchant/lib.js'></script>
+</head>
+
+<body ng-app="yapp">
+<!-- div used to make the body blur -->
+    
+    <div class="container">
+        <div class="row" ng-controller='SocketCtrl'>
+          <h1>Twitter Stream for Lastma</h1>
+          <div ng-repeat='tweet in tweets'>
+            {{tweet.text}} <button>Save as report</button>
+          </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script>
+      var app = angular.module('yapp', []);
+
+      app.factory('socket', ['$rootScope', function($rootScope) {
+        var socket = io.connect();
+        return {
+          on: function(eventName, callback){
+            socket.on(eventName, callback);
+          },
+          emit: function(eventName, data) {
+            socket.emit(eventName, data);
+          }
+        };
+      }]);
+
+      app.controller('SocketCtrl', function($scope, socket) {
+        $scope.tweets = [];
+        $scope.currentTweet = {};
+
+        $scope.join = function() {
+          socket.emit('add-customer', $scope.currentTweet);
+        };
+
+        socket.on('notification', function(data) {
+          $scope.$apply(function () {
+            console.log(data.tweet);
+            $scope.tweets.push(data.tweet);
+          });
+        });
+      });
+
+
+    </script>
+</body>
+</html>

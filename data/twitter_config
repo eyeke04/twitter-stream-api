@@ -1,0 +1,7 @@
+{
+    "consumerKey": "7ZCLpQd84ZtlpOtAQXMuErb17",
+    "consumerSecret": "mTHN1mWizTjzTyw6bOeCxbq1y1Mi3kn38tB88iNIjy78u0L5f7",
+    "accessToken": "219571619-CDh5Y684ajzSzWZ4iPbc4MBJqi1YhFMabM8nYrsX",
+    "accessTokenSecret": "SPTF5BZaqcfbjyB3QwQkWnZbupNyR36ZnVyTfl8QV7EO9",
+    "callBackUrl": "http://ootchack.herokuapp.com/callback"
+}

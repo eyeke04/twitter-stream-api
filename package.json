@@ -1,0 +1,13 @@
+{
+  "name": "starter-node-angular",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "method-override": "*",
+    "mongoose": "*",
+    "socket.io": "^1.7.3",
+    "twitter": "^1.7.0",
+    "twitter-node-client": "0.0.6"
+  }
+}
