@@ -24,6 +24,10 @@ app.use(methodOverride(function (req, res) {
   }
 }));
 
+var reports = require('./routes/report');
+
+app.use('/report', reports);
+
 app.use(express.static(__dirname + '/public'));
 
 /*******

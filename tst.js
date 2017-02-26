@@ -9,7 +9,7 @@ var client = new Twitter({
 /**
  * Stream statuses filtered by keyword
  * number of tweets per second depends on topic popularity
- **/
+ **
 
 client.stream('statuses/filter', {track: 'lastma'},  function(stream) {
   stream.on('data', function(tweet) {
@@ -35,3 +35,10 @@ client.post('statuses/update', {status: 'I Love Twitter'},  function(error, twee
   console.log(response);  // Raw response object. 
 });
 */
+
+
+var rep = {a: 'ds', ds: 'dsjkds', sdj: 'jsksd'};
+console.log(Object.keys(rep));
+for(i in Object.keys(rep)){
+  console.log(Object.keys(rep)[i]);
+}
