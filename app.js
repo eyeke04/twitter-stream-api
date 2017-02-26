@@ -66,15 +66,11 @@ client.stream('statuses/filter', {track: 'lastma'},  function(stream) {
 
 io.on('connection', function(socket) {
   console.log('new connection');
-  socket.on('add-customer', function(customer) {
-    /*
-    io.emit('notification', {
-      message: 'new customer',
-      customer: customer
-    });
-	*/
-	console.log('Action from front-end');
+  socket.on('add-report', function(customer) {
+    console.log('Action from front-end');
   });
+
+
 });
 
 server.listen(4041, function() {
