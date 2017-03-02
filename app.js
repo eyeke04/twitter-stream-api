@@ -32,10 +32,10 @@ app.use(methodOverride(function (req, res) {
 ********/
 var Twitter = require('twitter');
 var client = new Twitter({
-  consumer_key: '7ZCLpQd84ZtlpOtAQXMuErb17',
-  consumer_secret: 'mTHN1mWizTjzTyw6bOeCxbq1y1Mi3kn38tB88iNIjy78u0L5f7',
-  access_token_key: '219571619-CDh5Y684ajzSzWZ4iPbc4MBJqi1YhFMabM8nYrsX',
-  access_token_secret: 'SPTF5BZaqcfbjyB3QwQkWnZbupNyR36ZnVyTfl8QV7EO9'
+  consumer_key: 'MOCbONrYqhPDBLo8VqoNnw3J1',
+  consumer_secret: 'o1cIkeGQnQBy0XszUzmoZUQTkCaj4qKSYv7Q7Wp1FyOohCKo2S',
+  access_token_key: '835439139122200576-umVVWyETodBXRyFKlmLvR79yVCEVq6R',
+  access_token_secret: 'Up4Q9dBcXUMOp8Qv7I0uu6PsGshh2ItSITMyUfeMsK0b9'
 });
 
 var reports = require('./routes/report')(io, client);
