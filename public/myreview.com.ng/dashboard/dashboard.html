@@ -277,7 +277,7 @@
 														<td>
 															{{$index + 1}}
 														</td>
-														<td><a href="#">@{{tweet.user.screen_name}}</a> {{tweet.text}}</td>
+														<td><a href="http://www.twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}}</a> {{tweet.text}}</td>
 														<td class="td-actions text-right">
 															<button type="button" rel="tooltip" title="Save as report" class="btn btn-primary btn-simple btn-xs" ng-show='!saved[$index]' ng-click='save_report($index)'>
 																<i class="material-icons">save</i>
@@ -300,11 +300,8 @@
 														<td>
 															{{$index + 1}}
 														</td>
-														<td><a href="#">@{{tweet.initial_report.user}}</a> {{tweet.initial_report.text}}</td>
+														<td><a href="http://www.twitter.com/{{tweet.initial_report.user}}" target="_blank">@{{tweet.initial_report.user}}</a> {{tweet.initial_report.text}}</td>
 														<td class="td-actions text-right">
-															<button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-																<i class="material-icons">save</i>
-															</button>
 															<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
 																<i class="material-icons">refresh</i>
 															</button>

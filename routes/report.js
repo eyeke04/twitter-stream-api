@@ -104,7 +104,7 @@ module.exports = function(io, client) {
 		    });
 
 			
-		    client.post('statuses/update', {status: '@' + q.initial_report.user + ' We hear you loud and clear. Visit bit.ly/rant/'+ savedReport.id  + 'to provide more info', in_reply_to_status_id: q.initial_report.source_id.id},  function(error, tweet, response) {
+		    client.post('statuses/update', {status: '@' + q.initial_report.user + ' We hear you loud and clear. Visit bit.ly/rant/'+ savedReport.id  + 'to provide more info', in_reply_to_status_id: q.initial_report.source_id.id_str},  function(error, tweet, response) {
 			  if(error)
 			  console.log(tweet);  // Tweet body. 
 			  console.log(response);  // Raw response object. 
