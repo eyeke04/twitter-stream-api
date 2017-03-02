@@ -9,6 +9,7 @@ var methodOverride = require('method-override');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 if (app.settings.env === 'production') {
@@ -24,15 +25,9 @@ app.use(methodOverride(function (req, res) {
   }
 }));
 
-var reports = require('./routes/report');
-
-app.use('/report', reports);
-
-app.use(express.static(__dirname + '/public'));
-
 /*******
 [*]
-[*]		Twitter stream
+[*]   Twitter stream
 [*]
 ********/
 var Twitter = require('twitter');
@@ -42,6 +37,25 @@ var client = new Twitter({
   access_token_key: '219571619-CDh5Y684ajzSzWZ4iPbc4MBJqi1YhFMabM8nYrsX',
   access_token_secret: 'SPTF5BZaqcfbjyB3QwQkWnZbupNyR36ZnVyTfl8QV7EO9'
 });
+
+var reports = require('./routes/report')(io, client);
+
+app.use('/report', reports);
+
+app.get('/rant', function(req, res) {
+  res.sendFile(__dirname + '/public/myreview.com.ng/form1.html');
+});
+
+app.get('/history', function(req, res) {
+  res.sendFile(__dirname + '/public/myreview.com.ng/history/history.html');
+});
+
+app.get('/dashboard', function(req, res) {
+  res.sendFile(__dirname + '/public/myreview.com.ng/dashboard/dashboard.html');
+});
+
+app.use(express.static(__dirname + '/public/myreview.com.ng'));
+
 
 /**
  * Stream statuses filtered by keyword

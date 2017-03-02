@@ -1,0 +1,176 @@
+ul.haccordion {
+  list-style-type: none;
+  position: relative;
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+ul.haccordion li {
+  float: left;
+  width: 120px;
+  height: 480px;
+  display: block;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  background: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+
+ul.haccordion li.bg1 { background-image: url(../../images/media/works-img1.jpg); }
+
+ul.haccordion li.bg2 { background-image: url(../../images/media/works-img2.jpg);  }
+
+ul.haccordion li.bg3 { background-image: url(../../images/media/works-img3.jpg); }
+
+ul.haccordion li.bg4 { background-image: url(../../images/media/works-img4.jpg);  }
+
+ul.haccordion li.bg5 { background-image: url(../../images/media/works-img5.jpg);  }
+
+
+ul.haccordion li.bleft { border-left: 2px solid #fff; }
+
+ul.haccordion li .heading {
+  background: #fff;
+  padding: 10px;
+  margin-top: 60px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #393939;
+  text-align: center;
+  text-shadow: -1px -1px 1px #ccc;
+}
+
+ul.haccordion li .description {
+  position: absolute;
+  width: 400px;
+  height: 175px;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+
+ul.haccordion li .description h2 {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 35px;
+  color: #393939;
+  text-align: left;
+  margin: 0 0 15px 20px;
+  text-shadow: -1px -1px 1px #ccc;
+}
+
+ul.haccordion li .description p {
+  line-height: 14px;
+  margin: 10px 22px;
+  font-family: "roboto", sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.6em;
+}
+
+ul.haccordion li .description a {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 11px;
+  text-decoration: none;
+  color: #888;
+}
+
+ul.haccordion li .description a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+ul.haccordion li .bgDescription {
+  background: linear-gradient(0deg, #fff 40%, rgba(255,255,255,0));
+  height: 340px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  display: none;
+}
+
+
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1169px){
+
+
+ul.haccordion li .description h2 {
+  font-size: 27px;
+}
+
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 999px){
+
+ul.haccordion li {
+  height: 430px;
+}
+ul.haccordion li .description h2 {
+  font-size: 27px;
+}
+
+
+}
+
+@media only screen and (min-width: 640px) and (max-width: 767px){
+
+ul.haccordion li {
+  width: 50px;
+  height: 350px;
+}
+ul.haccordion li .description h2 {
+  font-size: 18px;
+}
+
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 639px){
+	
+ul.haccordion li {
+  width: 50px;
+  height: 350px;
+}
+ul.haccordion li .description h2 {
+  font-size: 18px;
+}
+
+}
+
+@media only screen and (max-width: 479px){
+
+ul.haccordion li {
+  width: 50px;
+  height: 300px;
+}
+ul.haccordion li .description h2 {
+  font-size: 16px;
+}
+
+}
+

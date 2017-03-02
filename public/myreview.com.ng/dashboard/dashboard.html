@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets2/img/apple-icon.png" />
+	<link rel="icon" type="image/png" href="../assets2/img/favicon.png" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>MyVoice Dashboard</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets2/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets2/css/material-dashboard.css" rel="stylesheet"/>
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../assets2/css/demo.css" rel="stylesheet" />
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app='yapp'>
+
+	<div class="wrapper" ng-controller='SocketCtrl'>
+
+	    <div class="sidebar" data-color="purple" data-image="../assets2/img/sidebar-1.jpg">
+			<!--
+		        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+		        Tip 2: you can also add an image using data-image tag
+		    -->
+
+			<div class="logo">
+				<a href="http://www.creative-tim.com" class="simple-text">
+					My Voice
+				</a>
+			</div>
+
+	    	<div class="sidebar-wrapper">
+	            <ul class="nav">
+	                <li class="active">
+	                    <a href="dashboard.html">
+	                        <i class="material-icons">dashboard</i>
+	                        <p>Dashboard</p>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="user.html">
+	                        <i class="material-icons">person</i>
+	                        <p>User Profile</p>
+	                    </a>
+	                </li>
+<!--
+	                <li>
+	                    <a href="table.html">
+	                        <i class="material-icons">content_paste</i>
+	                        <p>Table List</p>
+	                    </a>
+	                </li>
+-->
+<!--
+	                <li>
+	                    <a href="typography.html">
+	                        <i class="material-icons">library_books</i>
+	                        <p>Typography</p>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="icons.html">
+	                        <i class="material-icons">bubble_chart</i>
+	                        <p>Icons</p>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="maps.html">
+	                        <i class="material-icons">location_on</i>
+	                        <p>Maps</p>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="notifications.html">
+	                        <i class="material-icons text-gray">notifications</i>
+	                        <p>Notifications</p>
+	                    </a>
+	                </li>
+					<li class="active-pro">
+	                    <a href="upgrade.html">
+	                        <i class="material-icons">unarchive</i>
+	                        <p>Upgrade to PRO</p>
+	                    </a>
+	                </li>
+-->
+	            </ul>
+	    	</div>
+	    </div>
+
+	    <div class="main-panel">
+			<nav class="navbar navbar-transparent navbar-absolute">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+<!--						<a class="navbar-brand" href="#">Material Dashboard</a>-->
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+<!--
+							<li>
+								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="material-icons">dashboard</i>
+									<p class="hidden-lg hidden-md">Dashboard</p>
+								</a>
+							</li>
+-->
+<!--
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="material-icons">notifications</i>
+									<span class="notification">5</span>
+									<p class="hidden-lg hidden-md">Notifications</p>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Mike John responded to your email</a></li>
+									<li><a href="#">You have 5 new tasks</a></li>
+									<li><a href="#">You're now friend with Andrew</a></li>
+									<li><a href="#">Another Notification</a></li>
+									<li><a href="#">Another One</a></li>
+								</ul>
+							</li>
+-->
+							<li>
+								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+	 							   <i class="material-icons">person</i>
+	 							   <p class="hidden-lg hidden-md">Profile</p>
+		 						</a>
+                                <ul class="dropdown-menu">
+									<li><a href="#">Log out</a></li>
+								</ul>
+							</li>
+						</ul>
+
+						<form class="navbar-form navbar-right" role="search">
+							<div class="form-group  is-empty">
+								<input type="text" class="form-control" placeholder="Search">
+								<span class="material-input"></span>
+							</div>
+							<button type="submit" class="btn btn-white btn-round btn-just-icon">
+								<i class="material-icons">search</i><div class="ripple-container"></div>
+							</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="card card-stats">
+								<div class="card-header" data-background-color="red">
+									<i class="material-icons">info_outline</i>
+								</div>
+								<div class="card-content">
+									<p class="category">Unresolved Issues</p>
+									<h3 class="title">145</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons text-danger">warning</i> <a href="#pablo">By SLA should be less than a week...</a>
+									</div>
+								</div>
+							</div>
+						</div>
+<!--
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header" data-background-color="green">
+									<i class="material-icons">store</i>
+								</div>
+								<div class="card-content">
+									<p class="category">Revenue</p>
+									<h3 class="title">$34,245</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons">date_range</i> Last 24 Hours
+									</div>
+								</div>
+							</div>
+						</div>
+-->
+						<div class="col-lg-4">
+							<div class="card card-stats">
+								<div class="card-header" data-background-color="orange">
+									<i class="material-icons">content_copy</i>
+								</div>
+								<div class="card-content">
+									<p class="category">Fixed Issues</p>
+									<h3 class="title">75</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons">local_offer</i> Tracked from Website
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="card card-stats">
+								<div class="card-header" data-background-color="blue">
+									<i class="fa fa-twitter"></i>
+								</div>
+								<div class="card-content">
+									<p class="category">Tweets</p>
+									<h3 class="title">+245</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons">update</i> Just Updated
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<div class="card card-nav-tabs">
+								<div class="card-header" data-background-color="purple">
+									<div class="nav-tabs-navigation">
+										<div class="nav-tabs-wrapper">
+											<span class="nav-tabs-title">Social Media Monitor:</span>
+											<ul class="nav nav-tabs" data-tabs="tabs">
+												<li class="active">
+													<a href="#profile" data-toggle="tab">
+														<i class="material-icons">bug_report</i>
+														New
+													<div class="ripple-container"></div></a>
+												</li>
+												<li class="">
+													<a href="#messages" data-toggle="tab">
+														<i class="material-icons">code</i>
+														Reported
+													<div class="ripple-container"></div></a>
+												</li>
+												<li class="">
+													<a href="#settings" data-toggle="tab">
+														<i class="material-icons">check</i>
+														Resolved
+													<div class="ripple-container"></div></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="card-content">
+									<div class="tab-content">
+										<div class="tab-pane active" id="profile">
+											<table class="table">
+												<tbody>
+
+													<tr ng-repeat='tweet in tweets'>
+														<td>
+															{{$index + 1}}
+														</td>
+														<td><a href="#">@{{tweet.user.screen_name}}</a> {{tweet.text}}</td>
+														<td class="td-actions text-right">
+															<button type="button" rel="tooltip" title="Save as report" class="btn btn-primary btn-simple btn-xs" ng-show='!saved[$index]' ng-click='save_report($index)'>
+																<i class="material-icons">save</i>
+															</button>
+															<button type="button" rel="tooltip" title="Follow-up" class="btn btn-danger btn-simple btn-xs">
+																<i class="material-icons">refresh</i>
+															</button>
+														</td>
+													</tr>
+													
+													
+												</tbody>
+											</table>
+										</div>
+										<div class="tab-pane" id="messages">
+											<table class="table">
+												<tbody>
+													
+													<tr ng-repeat='tweet in savedTweets'>
+														<td>
+															{{$index + 1}}
+														</td>
+														<td><a href="#">@{{tweet.initial_report.user}}</a> {{tweet.initial_report.text}}</td>
+														<td class="td-actions text-right">
+															<button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+																<i class="material-icons">save</i>
+															</button>
+															<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+																<i class="material-icons">refresh</i>
+															</button>
+														</td>
+													</tr>
+
+
+												</tbody>
+											</table>
+										</div>
+										<div class="tab-pane" id="settings">
+											<table class="table">
+												<tbody>
+													<tr>
+														<td>
+
+														</td>
+														<td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+														<td class="td-actions text-right">
+															<button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+																<i class="material-icons">save</i>
+															</button>
+															<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+																<i class="material-icons">refresh</i>
+															</button>
+														</td>
+													</tr>
+													<tr>
+														<td>
+
+														</td>
+														<td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+														</td>
+														<td class="td-actions text-right">
+															<button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+																<i class="material-icons">save</i>
+															</button>
+															<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+																<i class="material-icons">refresh</i>
+															</button>
+														</td>
+													</tr>
+													<tr>
+														<td>
+<!--
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" name="optionsCheckboxes">
+																</label>
+															</div>
+-->
+														</td>
+														<td>Sign contract for "What are conference organizers afraid of?"</td>
+														<td class="td-actions text-right">
+															<button type="button" rel="tooltip" title="Save as report" class="btn btn-primary btn-simple btn-xs">
+																<i class="material-icons">save</i>
+															</button>
+															<button type="button" rel="tooltip" title="Follow-up" class="btn btn-danger btn-simple btn-xs">
+																<i class="material-icons">refresh</i>
+															</button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-12">
+							<div class="card">
+	                            <div class="card-header" data-background-color="orange">
+	                                <h4 class="title">Trending Issues</h4>
+	                                <p class="category">For Today - 15th September, 2016</p>
+	                            </div>
+	                            <div class="card-content table-responsive">
+	                                <table class="table table-hover">
+	                                    <thead class="text-warning">
+	                                        <th>ID</th>
+	                                    	<th>Issues</th>
+	                                    	<th>Number of Voices</th>
+	                                    
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr>
+	                                        	<td>1</td>
+	                                        	<td>Lastma</td>
+	                                        	<td>3738</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>2</td>
+	                                        	<td>Traffic</td>
+	                                        	<td>2189</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>3</td>
+	                                        	<td>Social Abuse</td>
+	                                        	<td>2042</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>4</td>
+	                                        	<td>Light</td>
+	                                        	<td>1985</td>
+	                                        </tr>
+                                            <tr>
+	                                        	<td>5</td>
+	                                        	<td>Corruption</td>
+	                                        	<td>935</td>
+	                                        </tr>
+                                            <tr>
+	                                        	<td>6</td>
+	                                        	<td>Health</td>
+	                                        	<td>830</td>
+	                                        </tr>
+                                            <tr>
+	                                        	<td>7</td>
+	                                        	<td>Police</td>
+	                                        	<td>728</td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+	                        </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<p class="copyright pull-right">
+						&copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.ootc.herokuapp.com">My Voice</a>, made with love for a better web
+					</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+</body>
+
+	<!--   Core JS Files   -->
+	<script src="../assets2/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script src="../assets2/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../assets2/js/material.min.js" type="text/javascript"></script>
+
+
+	<!--  Notifications Plugin    -->
+	<script src="../assets2/js/bootstrap-notify.js"></script>
+
+
+	<!-- Material Dashboard javascript methods -->
+	<script src="../assets2/js/material-dashboard.js"></script>
+
+	<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+	<script src="../assets2/js/demo.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+	
+	<script type="text/javascript">
+		var app = angular.module('yapp', []);
+		app.factory('socket', ['$rootScope', function($rootScope) {
+	        var socket = io.connect();
+	        return {
+	          on: function(eventName, callback){
+	            socket.on(eventName, callback);
+	          },
+	          emit: function(eventName, data) {
+	            socket.emit(eventName, data);
+	          }
+	        };
+	      }]);
+		app.controller('SocketCtrl', function($scope, socket, $http) {
+			$scope.saved = [];
+	        $scope.tweets = [];
+	        $scope.savedTweets = [];
+	        $scope.currentTweet = {};
+
+	        $scope.loadData = function(){
+	          $http.get('/report')
+	                .then(function(res) {
+	                    if (res.data.status == '00') {
+	                            console.log(res.data.data);
+	                            $scope.savedTweets = res.data.data;
+	                    }     
+	                }, function(err) {
+	                    console.log(err);
+	            })
+	         };
+
+             //call loadData when controller initialized
+            $scope.loadData();
+	        
+	        $scope.save_report = function(id) {
+	        	new_tweet = $scope.tweets[id];
+	        	var send_data = {'source': 'tweet', initial_report: {source: 'tweet', text: new_tweet.text, user: new_tweet.user.screen_name, source_id: new_tweet, embed_link: "", date: Date.now(), userObj: new_tweet.user}};
+	        	$http.post('/report/new', send_data)
+	        		.then(function(res) {
+	        			$scope.formMsg = res.data.msg;
+	        			console.log(res.data);
+	        			if (res.data.status == '00') {
+	        				alert('Report Saved and Follow-up tweet sent');
+	        				$scope.tweets.splice(id, 1);     
+	        				$scope.success = true;
+	        			}
+	        		}, function(err) {
+	        			console.log(err);
+	        		})
+	        };
+
+	        socket.on('newnotification', function(data) {
+              $scope.$apply(function () {
+                console.log(data);
+                $scope.savedTweets.push(data.tweet);
+              });
+            });
+
+	        socket.on('notification', function(data) {
+	          $scope.$apply(function () {
+	            console.log(data);
+	            $scope.tweets.push(data.tweet);
+	          });
+	        });
+
+	      });
+
+	</script>
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+
+			// Javascript method's body can be found in assets2/js/demos.js
+        	//demo.initDashboardPageCharts();
+
+    	});
+	</script>
+
+</html>

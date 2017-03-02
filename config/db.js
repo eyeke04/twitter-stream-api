@@ -34,12 +34,12 @@ var reportSchema = new Schema({
 	report: String,
 	location: String,
 	dateReported: Date, //date the full report was collected
-	agency_id: String,
+	agency: String,
 	cso: [String], //list of CSOs that follow up on cases like these
 	follow_up_to: String,	//id of a report that the user is responding to
 	tags: [String],
 	reporter: Object, //{phone: '', email: '', twitter: '', facebook: ''}
-	initial_report: Object, //{source: '', text:'', embed_link: '', date: Date} //where original complaint was collected from. Others include twitter, call, sms
+	initial_report: Object, //{source: '', text:'', source_id: '', date: Date, user: 'User'} //where original complaint was collected from. Others include twitter, call, sms
 	status: String, //received, forwarded, acknowledged, resolved
 	activity_log: [{activity: String, date: Date, by: String, status_changed_to: String, }],
 	supports: Number

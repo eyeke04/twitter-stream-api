@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from myreview.com.ng/addreview.php?id=90c8dca0-28a0-11e6-afd1-d324bce7425f by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:13:34 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="favicon.html">
+
+        <title>MyReview.ng</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="stylesheets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="stylesheets/css/app.css" rel="stylesheet">
+        <link href="stylesheets/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<style>
+
+.hidden>div {
+    display:none;
+}
+
+.visible>div {
+    display:block;
+}
+
+
+.ratingg {
+    float:left;
+    width:300px;
+}
+.ratingg span { float:right; position:relative; }
+.ratingg span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.ratingg span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.ratingg span:hover ~ span label,
+.ratingg span:hover label,
+.ratingg span.checked label,
+.ratingg span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script> 
+
+    
+    // handles the click event, sends the query
+function like(id,likecount) {
+    $.ajax({
+        url:'like.php?id=',
+        complete: function (response) {
+            $('#output').html(response.responseText);
+        },
+        error: function () {
+            $('#output').html('Bummer: there was an error!');
+        },
+    });
+    return false;
+}
+// handles the click event, sends the query
+function dislike(id,likecount) {
+    $.ajax({
+        url:'myAjax.php',
+        success: function (response) {
+            console.log(data, response);
+            $('#output').html(response);
+        },
+        error: function () {
+            $('#output').html('Bummer: there was an error!');
+        },
+    });
+    return false;
+
+
+</script>
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index-2.html"><img src="logo.png" class=" img-responsive"  /></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right" role="search" action="http://myreview.com.ng/search.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search For Business" name="query" id="query">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index-2.html">Home</a></li>
+                        <li><a href="prereview.html">Write A Review</a></li>
+
+                        
+                            <li><a href="user/userlogin.html">Log In</a></li>
+                            <li><a href="user/userregister.html">Sign Up</a></li>
+
+                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+
+        <div class="container entry">
+            <div class="main-page-content">
+                                <div class="business-details">
+                    <div class="business-item">
+                        <div class="business-about">
+                         
+                            <div class="business-image">
+                                <img src='https://cdn.movemeback.com/blog/images/Leadpath-logo.png' width="100%" alt="Business image" />
+                            </div>
+                            <div class="business-name-review">
+                                <h3>LeadPath Nigeria</h3>
+                                
+                            </div>
+                        </div>
+                        <div class="business-address">
+                            <address>
+                                <p>70 Olonode Street, off Hughes Avenue, Alagomeji, Yaba, Lagos</p>
+                                <!-- <p>Lagos</p> -->
+                                <!-- <p>+23480968546</p> -->
+                            </address>
+                        </div>
+                    </div>
+                  
+                </div>
+                <form action='http://myreview.com.ng/addreview.php?id=90c8dca0-28a0-11e6-afd1-d324bce7425f' method="POST">
+                     <input class="form-control" type="hidden" name="bizid" value='90c8dca0-28a0-11e6-afd1-d324bce7425f' />
+                    
+                    <div class="form-group">
+                        <label>Rate the service / product?</label>
+                        <div class="clearfix"></div>
+                                   <div class=" ratingg">
+      <span><input type="hidden" name="rating" value="0"></span>                
+<span><input type="radio" name="rating" id="str5" value="5"><label for="str5" class="fa fa-star"></label></span>
+    <span><input type="radio" name="rating" id="str4" value="4"><label for="str4" class="fa fa-star"></label></span>
+    <span><input type="radio" name="rating" id="str3" value="3"><label for="str3" class="fa fa-star"></label></span>
+    <span><input type="radio" name="rating" id="str2" value="2"><label for="str2" class="fa fa-star"></label></span>
+    <span><input type="radio" name="rating" id="str1" value="1"><label for="str1" class="fa fa-star"></label></span></div>
+                    </div>
+
+                  <div class="clearfix"></div>
+                    <div class="form-group">
+                        <label>Your comment</label>
+                        <textarea name="opinion" class="form-control" rows="10"></textarea>
+                        <div class="text-right">
+                            <button type="submit" name="submit" class="btn btn-review">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar">
+                <div class="business-holder">
+                    <a class="most-reviewed-business__items">
+                        <div class="most-reviewed-business__item__image">
+                            <img src="img/98.jpg" alt="" width="100%" />
+                        </div>
+                        <div class="most-reviewed-business__item__description">
+                            <h4 class="item__description__title">Huntella Gadgets</h4>
+                            <div class="rating">
+                                <span class="rating">
+                                    <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </span>
+                            </div>
+                            <div class="reviewed-time">
+                                56 mins ago
+                            </div>
+                        </div>
+                    </a>
+                    <a class="most-reviewed-business__items">
+                        <div class="most-reviewed-business__item__image">
+                            <img src="img/98.jpg" alt="" width="100%" />
+                        </div>
+                        <div class="most-reviewed-business__item__description">
+                            <h4 class="item__description__title">Huntella Gadgets</h4>
+                            <div class="rating">
+                                <span class="rating">
+                                    <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </span>
+                            </div>
+                            <div class="reviewed-time">
+                                56 mins ago
+                            </div>
+                        </div>
+                    </a>
+                    <a class="most-reviewed-business__items">
+                        <div class="most-reviewed-business__item__image">
+                            <img src="img/98.jpg" alt="" width="100%" />
+                        </div>
+                        <div class="most-reviewed-business__item__description">
+                            <h4 class="item__description__title">Huntella Gadgets</h4>
+                            <div class="rating">
+                                <span class="rating">
+                                    <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </span>
+                            </div>
+                            <div class="reviewed-time">
+                                56 mins ago
+                            </div>
+                        </div>
+                    </a>
+                    <a class="most-reviewed-business__items">
+                        <div class="most-reviewed-business__item__image">
+                            <img src="img/98.jpg" alt="" width="100%" />
+                        </div>
+                        <div class="most-reviewed-business__item__description">
+                            <h4 class="item__description__title">Huntella Gadgets</h4>
+                            <div class="rating">
+                                <span class="rating">
+                                    <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </span>
+                            </div>
+                            <div class="reviewed-time"> 56 mins ago
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="add-bussiness" style="background-image: url('img/2.jpg')">
+                    <button class="btn btn-default">Add Business</button>
+                </div>
+            </div>
+        </div>
+
+       <div class="footer">
+            <nav class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">My Review</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="aboutus.html">About us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                        <p class="navbar-text navbar-right">Connect with us</p>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+
+         <script type="text/javascript">
+    $(document).ready(function(){
+       
+        $('#write').click(function() {
+            $(".text-container").show();
+        });
+    });
+
+
+    $(document).ready(function(){
+//  Check Radio-box
+    $(".ratingg input:radio").attr("checked", false);
+    $('.ratingg input').click(function () {
+        $(".ratingg span").removeClass('checked');
+        $(this).parent().addClass('checked');
+    });
+
+    $('input:radio').change(
+    function(){
+        var userRating = this.value;
+       // alert(userRating);
+    }); 
+});
+</script>
+
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        <script src="js/custom.js"></script>
+
+
+    </body>
+
+<!-- Mirrored from myreview.com.ng/addreview.php?id=90c8dca0-28a0-11e6-afd1-d324bce7425f by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:13:34 GMT -->
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from myreview.com.ng/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:10:38 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="favicon.html">
+
+        <title>MyVoice - Make Your Voice Work</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="stylesheets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="stylesheets/css/app.css" rel="stylesheet">
+        <link href="stylesheets/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<style>
+
+.hidden>div {
+    display:none;
+}
+
+.visible>div {
+    display:block;
+}
+
+
+.ratingg {
+    float:left;
+    width:300px;
+}
+.ratingg span { float:right; position:relative; }
+.ratingg span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.ratingg span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.ratingg span:hover ~ span label,
+.ratingg span:hover label,
+.ratingg span.checked label,
+.ratingg span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script> 
+
+    
+    // handles the click event, sends the query
+function like(id,likecount) {
+    $.ajax({
+        url:'like.php?id=',
+        complete: function (response) {
+            $('#output').html(response.responseText);
+        },
+        error: function () {
+            $('#output').html('Bummer: there was an error!');
+        },
+    });
+    return false;
+}
+</script>
+
+
+
+    </head>
+
+    <body ng-app='yapp'>
+
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index-2.html"><img src="myvoice.png" class=" img-responsive" width="80" /></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right" role="search" action="http://myreview.com.ng/search.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search For Business" name="query" id="query">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index-2.html">Home</a></li>
+                        <li><a href="prereview.html">Browse Issues</a></li>
+
+<!--
+                        
+                            <li><a href="user/userlogin.html">Log In</a></li>
+                            <li><a href="user/userregister.html">Sign Up</a></li>
+-->
+
+                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container entry">
+            <div class="main-page-content" ng-controller='SocketCtrl'>
+                <h1 class="title title--margin">Latest Voices</h1>
+                <div class="review-list">
+                  
+                    <div class='review-list__item' ng-repeat='tweet in tweets'>
+                        <div class='review-list__item-description'>
+                            <div class='reviewer-avatar'>
+                                <img src='http://static.parastorage.com/services/wixapps/2.461.18/javascript/wixapps/apps/blog/images/no-image-icon.png' alt='Avatar' class='img-responsive' />
+                            </div>
+                            <div class='reviewer-details'>
+                                <div class='reviewer-details__name'>@{{tweet.initial_report.user}}</div>
+                                <span>voiced on</span>
+                                <div class='reviewed-topic'>
+                                    <a href='viewbusinessd48d.html?id=9b8cb5b0-d360-11e6-84ed-0bdb025a7cfa'>  Lastma</a>
+                                </div>
+                                <br />
+                                
+                                <div class='reviewed-time'>
+                                    <i class='fa fa-clock-o'></i>   {{tweet.initial_report.date}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class='review-list__item-content'>
+                            <p>{{tweet.initial_report.text}}</p>
+                        </div>
+                    </div>  
+                                       
+
+                </div>
+                
+<!-- TOP REviewers SECTION -->
+                <!-- <div class="top-reviewers">
+                    <h2 class="title title--margin">Top Reviewers <span>(10)</span></h2>
+                    <div class="reviewers-list">
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                        <div class="reviewers-list__item">
+                            <img src="img/98.jpg" alt="" class="img-responsive" />
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-default">View all</a>
+                </div>
+ -->
+
+                <!-- Most Reviewed Businesses -->
+               <!-- <div class="most-reviewed-business">
+                    <h3 class="title title--margin">Most Reviewed Businesses</h3>
+                    <div class="most-reviewed-business__list">
+
+                          <a class='most-reviewed-business__item' href='viewbusinessb52e.html?id=90c8dca0-28a0-11e6-afd1-d324bce7425f'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='https://cdn.movemeback.com/blog/images/Leadpath-logo.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>LeadPath Nigeria</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='item__description__value'>105 reviews</div>
+                            </div>
+                        </a>  <a class='most-reviewed-business__item' href='viewbusinessf626.html?id=ab9914f0-28a5-11e6-afd1-d324bce7425f'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='https://media.today.ng/main/wp-content/uploads/2015/09/ecobank.gif' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>Eco Bank</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='item__description__value'>105 reviews</div>
+                            </div>
+                        </a>  <a class='most-reviewed-business__item' href='viewbusinessfda5.html?id=cd046130-28a5-11e6-afd1-d324bce7425f'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='http://www.gongnews.net/wp-content/uploads/2013/12/mtn.jpg' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>MTN Nigeria</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='item__description__value'>105 reviews</div>
+                            </div>
+                        </a>  <a class='most-reviewed-business__item' href='viewbusinesse279.html?id=bf750030-e5dc-11e5-8da2-d11cb4b03bc5'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='https://pbs.twimg.com/profile_images/2249745975/twitter2_400x400.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>Co-Creation Hub</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='item__description__value'>105 reviews</div>
+                            </div>
+                        </a>  <a class='most-reviewed-business__item' href='viewbusiness6d08.html?id=a4fbf890-41ed-11e6-92aa-f1931def5a85'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='http://static.parastorage.com/services/wixapps/2.461.18/javascript/wixapps/apps/blog/images/no-image-icon.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>Guaranty Trust Bank</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='item__description__value'>105 reviews</div>
+                            </div>
+                        </a>  <a class='most-reviewed-business__item' href='viewbusiness2561.html?id=f077e990-3f9b-11e6-9d1f-fdbe71bceebb'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='http://static.parastorage.com/services/wixapps/2.461.18/javascript/wixapps/apps/blog/images/no-image-icon.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>Autosave Roadside Assistance</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='item__description__value'>105 reviews</div>
+                            </div>
+                        </a>                      
+                       
+                    </div>
+                    <a href="#" class="btn btn-default">View all</a>
+<!--                </div>-->
+            </div>
+            <div class="sidebar">
+                
+<!--
+                <div class="add-bussiness" style="background-image: url('img/2.jpg')">
+                    <a href="prereview.html" ><button class="btn btn-default">Write a review</button></a>
+                </div>
+
+
+
+
+<!--
+                <div class="most-popular-review">
+
+                                            <div class="most-popular-review-title">Most Popular Reviews</div>
+                    <div class="most-popular-review-content">
+                 <div class="review-list__item">
+                            <div class="review-list__item-description">
+                                <div class="reviewer-avatar">
+                                    <img src="img/98.jpg" alt="Avatar" class="img-responsive" />
+                                </div>
+                                <div class="reviewer-details">
+                                    <div class="reviewer-details__name">ife</div>
+                                    <span>reviewed</span>
+                                    <div class="reviewed-topic">
+                                        <a href="viewbusiness2561.html?id=f077e990-3f9b-11e6-9d1f-fdbe71bceebb">Autosave Roadside Assistance</a>
+                                    </div>
+                                    <br />
+                                    <div class="review-rating">
+                                        <span class="rating">
+                                            <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-list__item-content">
+                                <p>almost fell my hand ni sha</p>
+                            </div>
+                        </div>                    </div>
+                </div>
+-->
+
+                <div class="recently-reviewed">
+                    <div class="recently-reviewed-header">Trending Issues</div>
+                    <div class="recently-reviewed-content">
+                        <a class='most-reviewed-business__items'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='http://static.parastorage.com/services/wixapps/2.461.18/javascript/wixapps/apps/blog/images/no-image-icon.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>My Driver's License Expired less than a day and I was fined</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='reviewed-time'>
+                                    <i class='fa fa-clock-o'></i> Within the hour
+                                </div>
+                            </div>
+                        </a><a class='most-reviewed-business__items'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='http://static.parastorage.com/services/wixapps/2.461.18/javascript/wixapps/apps/blog/images/no-image-icon.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>No One-Way Sign and I was arrested</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='reviewed-time'>
+                                    <i class='fa fa-clock-o'></i> Within the hour
+                                </div>
+                            </div>
+                        </a>
+                        <a class='most-reviewed-business__items'>
+                            <div class='most-reviewed-business__item__image'>
+                                <img src='http://static.parastorage.com/services/wixapps/2.461.18/javascript/wixapps/apps/blog/images/no-image-icon.png' alt='' width='100%' />
+                            </div>
+                            <div class='most-reviewed-business__item__description'>
+                                <h4 class='item__description__title'>LastMa towed my car and I cannot pay fine</h4>
+                                <div class='rating'>
+                                    <span class='rating'>
+                                        <span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span><span class='fa fa-star'></span>
+                                    </span>
+                                </div>
+                                <div class='reviewed-time'>
+                                    <i class='fa fa-clock-o'></i> Within the hour
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="footer">
+            <nav class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">MyVoice</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="aboutus.html">About us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                        <p class="navbar-text navbar-right">Connect with us</p>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        <script src="js/custom.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+        
+        <script type="text/javascript">
+            var app = angular.module('yapp', []);
+            app.factory('socket', ['$rootScope', function($rootScope) {
+                var socket = io.connect();
+                return {
+                  on: function(eventName, callback){
+                    socket.on(eventName, callback);
+                  },
+                  emit: function(eventName, data) {
+                    socket.emit(eventName, data);
+                  }
+                };
+              }]);
+
+            app.controller('SocketCtrl', function($scope, socket, $http) {
+                $scope.saved = [];
+                $scope.tweets = [];
+                $scope.currentTweet = {};
+                
+                $scope.loadData = function(){
+                  $http.get('/report')
+                        .then(function(res) {
+                            if (res.data.status == '00') {
+                                    console.log(res.data.data);
+                                    $scope.tweets = res.data.data;
+                            }     
+                        }, function(err) {
+                            console.log(err);
+                    })
+                 };
+
+                 //call loadData when controller initialized
+                $scope.loadData();
+
+                
+
+                socket.on('newnotification', function(data) {
+                  $scope.$apply(function () {
+                    console.log(data);
+                    $scope.tweets.push(data.tweet);
+                  });
+                });
+
+              });
+
+        </script>
+
+    </body>
+
+<!-- Mirrored from myreview.com.ng/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:11:48 GMT -->
+</html>
