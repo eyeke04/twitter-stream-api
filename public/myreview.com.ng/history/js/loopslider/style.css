@@ -1,0 +1,126 @@
+#slider-outline #slider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding:0px 0px;
+}
+
+#slider-outline #sl-view{
+    clear: both;
+    position: relative;
+    margin: 0 auto;
+}
+#slider-outline #sl-wrap{
+    clear: both;
+    position: absolute;
+    margin: 0 auto;
+	text-align: center;
+}
+
+#slider-outline .sl-div{
+    background-color: #50c9d4;
+    float: left;
+    color: #fff;
+	padding: 50px 100px;
+}
+#slider-outline .sl-div.light{
+    background-color: #7ddee7;
+}
+#slider-outline .sl-div.gray{
+    background-color: #6f6f75;
+}
+#slider-outline .sl-div.gray2{
+    background-color: #919195;
+}
+
+
+#slider-outline #sl-next, #slider-outline #sl-prev{
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    font-size: 50px;
+    height: 100%;
+    top: 0px;
+    cursor: pointer;
+	background-color: rgba(255,255,255,0.3);
+}
+#slider-outline #sl-next>span, #slider-outline #sl-prev>span{
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -25px !important;
+    color: #393939;
+}
+#slider-outline #sl-next:hover, #slider-outline #sl-prev:hover{
+    background-color: rgba(255,255,255,0.7);
+	transition: all 0.3s ease;
+}
+#slider-outline #sl-next{
+    right: 0px;
+    z-index: 5000;
+}
+#slider-outline #sl-prev{
+    left: 0px;
+    z-index: 5000;
+}
+
+#slider-outline #sl-nav{
+    position: absolute;
+    z-index: 5000;
+}
+#slider-outline #sl-nav>p{
+    font-size: 20px;
+    float: left;
+    margin: 0 10px;
+    color: #aaa;
+    cursor: pointer;
+}
+#slider-outline #sl-nav>p:hover{
+    color: #eee;
+    text-shadow: 0px 1px 0px #333;
+}
+#slider-outline #sl-nav>p.hit{
+    color: #0080FF;
+}
+#slider-outline #sl-nav>p.hit:hover{
+    color: #eee;
+}
+
+
+#slider-outline .sl-div .cirpimg img {
+	width: 110px;
+	height: 110px;
+	border-radius: 100%;
+	text-align: center;
+	margin: 0 auto 16px auto;
+}
+#slider-outline .sl-div h4 {
+	color: #fff;
+	font-weight: 500;
+	line-height: 18px;
+	margin: 0 0 27px 0;
+}
+#slider-outline .sl-div h4 em {
+	color: #fff;
+	font-size: 12px;
+	display: block;
+	font-style: normal;
+	font-weight: 300;
+}
+
+
+/* style two */
+#slider-outline .sl-div.two {
+    background-color: #46d8bd;
+}
+#slider-outline .sl-div.two.light{
+    background-color: #9fe7da;
+}
+
+
+
+
+

@@ -1,0 +1,307 @@
+#tabs {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#tabs ul {
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+#tabs li a {
+	width: 350px;
+	text-align: left;
+	font-size: 16px;
+	display: block;
+	padding: 20px 0px 20px 25px;
+	text-decoration: none;
+	color: #727272;
+	margin: 0px 0px 10px 0px;
+	transition: all 0.3s ease;
+}
+#tabs li a:hover {
+	background: #eee;
+}
+
+#tabs li a i {
+	float: left;
+	color: #999;
+	font-size: 25px;
+	margin-right: 18px;
+}
+
+#tabs_container {
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+	padding: 0px 0px 0px 90px;
+	border-left: 1px solid #e3e3e3;
+}
+
+#tabs_container div {
+	margin-right: 0px;
+}
+
+.transition {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.make_transist {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.hidescale {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showscale {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.hideleft {
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showleft {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.hidescaleup {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.showscaleup {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.hideflip {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+
+	-webkit-transform: rotatey(-90deg) scale(1.1);
+	-moz-transform: rotatey(-90deg) scale(1.1);
+	-o-transform: rotatey(-90deg) scale(1.1);
+	-ms-transform: rotatey(-90deg) scale(1.1);
+	transform: rotatey(-90deg) scale(1.1);
+
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.showflip {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+
+	-webkit-transform: rotatey(0deg) scale(1);
+	-moz-transform: rotatey(0deg) scale(1);
+	-o-transform: rotatey(0deg) scale(1);
+	-ms-transform: rotatey(0deg) scale(1);
+	transform: rotatey(0deg) scale(1);
+
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.tabulous_active {
+	background: #eee !important;
+	color: #393939 !important;
+	border-right: 8px solid #393939;
+}
+.tabulousclear {
+	display: block;
+	clear: both;
+}
+
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1169px){
+	
+#tabs li a {
+	width: 300px;
+}
+#tabs_container {
+	padding: 0px 0px 0px 70px;
+}
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 999px){
+
+#tabs li a {
+	width: 270px;
+	font-size: 14px;
+	padding: 20px 0px 20px 18px;
+}
+#tabs li a i {
+	font-size: 22px;
+	margin-right: 14px;
+}
+#tabs_container {
+	padding: 0px 0px 0px 50px;
+}
+
+
+}
+
+@media only screen and (min-width: 640px) and (max-width: 767px){
+
+#tabs li a {
+	width: 220px;
+	font-size: 13px;
+	padding: 16px 0px 16px 10px;
+}
+#tabs li a i {
+	font-size: 18px;
+	margin-right: 10px;
+	margin-top: 3px;
+}
+#tabs_container {
+	padding: 0px 0px 0px 30px;
+}
+
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 639px){
+
+#tabs ul {
+	float: none;
+}
+#tabs li a {
+	width: 100%;
+	padding: 16px 0px 16px 25px;
+	margin-bottom: 5px;
+}
+
+.tabulous_active {
+	border-right: none;
+	border-bottom: 3px solid #393939;
+}
+
+#tabs_container {
+	padding: 0px 0px 0px 0px;
+	border-left: none;
+	border-top: 50px solid #fff;
+}
+
+
+}
+
+@media only screen and (max-width: 479px){
+
+#tabs ul {
+	float: none;
+}
+#tabs li a {
+	width: 100%;
+	padding: 16px 0px 16px 25px;
+	margin-bottom: 5px;
+}
+
+.tabulous_active {
+	border-right: none;
+	border-bottom: 3px solid #393939;
+}
+
+#tabs_container {
+	padding: 0px 0px 0px 0px;
+	border-left: none;
+	border-top: 50px solid #fff;
+}
+
+}
+
+
+
+

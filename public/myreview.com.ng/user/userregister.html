@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from myreview.com.ng/user/userregister.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:12:34 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Register</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  	<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../favicon.html">
+
+        <title>Reviews.ng</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="stylesheets/css/bootstrap.min.html" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="stylesheets/css/app.html" rel="stylesheet">
+        <link href="stylesheets/css/font-awesome.min.html" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+
+    <body>
+        <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1071506996263721',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use graph api version 2.5
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+     // alert("hello");
+    //statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "http://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', { locale: 'en_US', fields: 'name, email' },function(response) {
+      console.log('Successful login for: ' + response.toString());
+
+
+      
+    window.location.href = 'handleregisterbaf7.html?fb=1&amp;email='+response.email + '&name=' + response.name;
+
+
+      // document.getElementById('status').innerHTML =
+      //   'Thanks for logging in, ' + response.email + '!'; 
+
+       // alert()
+    });
+  }
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "http://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7&appId=1071506996263721";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+   
+</script>
+
+
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index-2.html">My Review</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../index-2.html">Home</a></li>
+                        <li><a href="../prereview.html">Write A Review</a></li>
+                        <li><a href="userlogin.html">Log In</a></li>
+                        <li><a href="userregister.html">Sign Up</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	  <div id="login-page">
+	  	<div class="container">
+	  	
+		         <form class="form-login" action="http://myreview.com.ng/user/handleregister.php" method="POST">
+		        <h2 class="form-login-heading">register anonymously</h2>
+		        <div class="login-wrap">
+		            <input type="text" class="form-control" placeholder="Name: " name="name" autofocus>
+		            <br>
+		            <input type="text" class="form-control" placeholder="E-mail Address: " name="email" autofocus>
+		            <br>
+		           
+		            <button class="btn btn-theme btn-block" type="submit" name="submit" ><i class="fa fa-lock"></i> REGISTER</button>
+		            <hr>
+		             </form>
+		            
+		            <div class="login-social-link centered">
+		            <p>or you can register via facebook</p>
+		                  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-size="large" width="200">
+
+</fb:login-button>
+
+  <!-- 		                <a href="handleregister.php?google=1" class="btn btn-google btn-danger" ><i class="fa fa-google"></i> Google</a>
+		                <a href="handleregister.php?twitter=1" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+		           
+  -->
+
+
+</div>
+		            <div class="registration">
+		                You have an account ?<br/>
+		                <a class="" href="userlogin.html">
+		                    Login now
+		                </a>
+		            </div>
+		
+		        </div>
+		
+		          <!-- Modal -->
+		     <!--      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">
+		                      <div class="modal-header">
+		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                          <h4 class="modal-title">Forgot Password ?</h4>
+		                      </div>
+		                      <div class="modal-body">
+		                          <p>Enter your e-mail address below to reset your password.</p>
+		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		
+		                      </div>
+		                      <div class="modal-footer">
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+		                          <button class="btn btn-theme" type="button">Submit</button>
+		                      </div>
+		                  </div>
+		              </div>
+		          </div> -->
+		          <!-- modal -->
+		
+		    	 
+	  	
+	  	</div>
+	  </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+  </body>
+
+<!-- Mirrored from myreview.com.ng/user/userregister.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2017 13:12:34 GMT -->
+</html>
